@@ -19,7 +19,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from collections import Counter
 
-dbPath = "/home/john/Documents/dataManagement/hf-library-landscape/data/huggingface_models.db"
+dbPath = "data/huggingface_models.db"
 def getDF(command):
     connection = sqlite3.connect(dbPath)
     df = pd.read_sql_query(command, connection)
@@ -269,7 +269,7 @@ def buildModelDatasetNoLikes():
 
 def trainModel(x, y):
     xTrain, xTest, yTrain, yTest = train_test_split(x, y, test_size=0.2, random_state=35)
-    model = RandomForestClassifier(n_estimators=100)
+    model = RandomForestClassifier(n_estimators=5000)
     model.fit(xTrain, yTrain)
     preds = model.predict(xTest)
     accuracy = accuracy_score(yTest, preds)
@@ -343,7 +343,7 @@ def runPredictionModelsNoLikes():
     print("\nTHE ACCURACY OF THE LOGISTIC REGRESSION MODEL IS:")
     print(f"ACCURACY: {logAcc:.4f}\n")
 
-    rfModelPipe = Pipeline(steps=[("preprocessor", logModelPipe.named_steps["preprocessor"]),("model", RandomForestClassifier(n_estimators=10))])
+    rfModelPipe = Pipeline(steps=[("preprocessor", logModelPipe.named_steps["preprocessor"]),("model", RandomForestClassifier(n_estimators=1000))])
     rfModelPipe.fit(xTrain, yTrain)
     rfPreds = rfModelPipe.predict(xTest)
     rfAcc = accuracy_score(yTest, rfPreds)

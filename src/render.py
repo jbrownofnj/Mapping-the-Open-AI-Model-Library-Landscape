@@ -16,7 +16,7 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 from analysis import *
 
 
-dbPath = "/home/john/Documents/dataManagement/hf-library-landscape/data/huggingface_models.db"
+dbPath = "data/huggingface_models.db"
 def getDF(command):
     conn = sqlite3.connect(dbPath)
     df = pd.read_sql_query(command, conn)

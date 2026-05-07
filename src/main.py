@@ -14,8 +14,8 @@ from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
-
-dbPath = "/home/john/Documents/dataManagement/hf-library-landscape/data/huggingface_models.db"
+os.makedirs("data", exist_ok=True)
+dbPath = "data/huggingface_models.db"
 
 load_dotenv()
 hfToken = os.getenv("HF_TOKEN")
