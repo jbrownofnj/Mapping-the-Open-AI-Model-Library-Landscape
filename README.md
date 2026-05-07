@@ -20,7 +20,7 @@ source venv/bin/activate
 ```
 ## 3. Install packages
 ```bash 
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 ## 4. Add the HF API Key from CodeBench
