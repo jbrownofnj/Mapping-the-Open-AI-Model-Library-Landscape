@@ -12,7 +12,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import OneHotEncoder
 
-dbPath = "/home/john/Documents/dataManagement/hf-library-landscape/data/huggingface_models.db"
+dbPath = "data/huggingface_models.db"
 load_dotenv()
 hfToken = os.getenv("HF_TOKEN")
 api = HfApi(token=hfToken)

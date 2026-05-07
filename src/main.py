@@ -21,7 +21,7 @@ load_dotenv()
 hfToken = os.getenv("HF_TOKEN")
 api = HfApi(token=hfToken)
 
-#fullPopulateDB()
+fullPopulateDB()
 runFullAnalysis()
 produceGraphs()
 runPredictionModelsNoLikes()
