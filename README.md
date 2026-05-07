@@ -5,6 +5,7 @@
 ```bash
 git clone https://github.com/jbrownofnj/Mapping-the-Open-AI-Model-Library-Landscape.git
 cd Mapping-the-Open-AI-Model-Library-Landscape
+code .
 ```
 ## 2. Make a virtual invironment
 ### Windows
